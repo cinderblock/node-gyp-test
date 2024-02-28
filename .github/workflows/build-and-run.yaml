@@ -29,7 +29,7 @@ jobs:
     name: ${{ matrix.os }} Node.js ${{ matrix.node_version }}
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node_version }}
     - uses: actions/checkout@v4
