@@ -1,0 +1,44 @@
+name: Build and Run on all platforms
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  all:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node_version:
+          - 14
+          - 15
+          - 16
+          - 17
+          - 18
+          - 19
+          - 20
+          - 21
+    name: ${{ matrix.os }} Node.js ${{ matrix.node_version }}
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node_version }}
+    - uses: actions/checkout@v2
+    
+    - name: Install Python
+      if: matrix.os == 'windows-latest'
+      run: winget install -e --id Python.Python.3.12
+    - name: Install C++ Build Tools
+      if: matrix.os == 'windows-latest'
+      run: winget install -e --id Microsoft.VisualStudio.2022.Community --override "--quiet --add Microsoft.VisualStudio.Workload.VCTools"
+  
+    - name: Prepare
+      run: npm --color=always --silent install
+    - name: Build
+      run: npm --color=always --silent run build
+    - name: Run
+      run: npm --color=always --silent run start
