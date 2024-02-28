@@ -29,7 +29,10 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
     - uses: actions/checkout@v2
-    
+
+    - name: Install winget
+      if: matrix.os == 'windows-latest'
+      uses: Cyberboss/install-winget@v1
     - name: Install Python
       if: matrix.os == 'windows-latest'
       run: winget install -e --id Python.Python.3.12
