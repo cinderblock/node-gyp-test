@@ -1,0 +1,26 @@
+{
+  "name": "node-gyp-test",
+  "version": "0.0.0",
+  "description": "Simple package that can be used as a skeleton or test package for a node-gyp based build",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cinderblock/node-gyp-test.git"
+  },
+  "keywords": [
+    "node-gyp",
+    "native",
+    "napi",
+    "C++",
+    "Node-API"
+  ],
+  "author": "Cameron Tacklind <cameron@tacklind.com> (https://github.com/cinderblock)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cinderblock/node-gyp-test/issues"
+  },
+  "homepage": "https://github.com/cinderblock/node-gyp-test#readme"
+}
