@@ -26,6 +26,12 @@ jobs:
           # Error: sys.exit(gyp.script_main())
           - os: macos-latest
             node_version: 14
+          # Error: if not defined npm_config_node_gyp
+          - os: windows-latest
+            node_version: 14
+          # Error: Exit code 1
+          - os: windows-latest
+            node_version: 15
     name: ${{ matrix.os }} Node.js ${{ matrix.node_version }}
     runs-on: ${{ matrix.os }}
     steps:
