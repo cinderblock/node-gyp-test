@@ -4,7 +4,10 @@
   "description": "Simple package that can be used as a skeleton or test package for a node-gyp based build",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "node-gyp configure",
+    "rebuild": "node-gyp rebuild",
+    "build": "node-gyp build",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +18,8 @@
     "native",
     "napi",
     "C++",
+    "node-addon-api",
+    "bindings",
     "Node-API"
   ],
   "author": "Cameron Tacklind <cameron@tacklind.com> (https://github.com/cinderblock)",
@@ -22,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/cinderblock/node-gyp-test/issues"
   },
-  "homepage": "https://github.com/cinderblock/node-gyp-test#readme"
+  "homepage": "https://github.com/cinderblock/node-gyp-test#readme",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^7.1.0",
+    "node-gyp": "^10.0.1"
+  }
 }
