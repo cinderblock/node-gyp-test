@@ -23,7 +23,7 @@ jobs:
           - 20
           - 21
         exclude:
-          # sys.exit(gyp.script_main())
+          # Error: sys.exit(gyp.script_main())
           - os: macos-latest
             node_version: 14
     name: ${{ matrix.os }} Node.js ${{ matrix.node_version }}
