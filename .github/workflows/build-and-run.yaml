@@ -14,9 +14,18 @@ jobs:
           - macos-latest
           - windows-latest
         node_version:
+          - 14
+          - 15
+          - 16
+          - 17
           - 18
+          - 19
           - 20
           - 21
+        exclude:
+          # sys.exit(gyp.script_main())
+          - os: macos-latest
+            node_version: 14
     name: ${{ matrix.os }} Node.js ${{ matrix.node_version }}
     runs-on: ${{ matrix.os }}
     steps:
