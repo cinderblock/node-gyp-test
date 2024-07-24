@@ -4,6 +4,8 @@ This is a simple skeleton app that can be used to test if your node-gyp build en
 
 Alternatively, use this as a starting point for your native module.
 
+[![Build and Run on all platforms](https://github.com/cinderblock/node-gyp-test/actions/workflows/build-and-run.yaml/badge.svg)](https://github.com/cinderblock/node-gyp-test/actions/workflows/build-and-run.yaml)
+
 ## Usage
 
 ```bash
