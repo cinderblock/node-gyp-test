@@ -26,6 +26,9 @@ jobs:
           # Error: sys.exit(gyp.script_main())
           - os: macos-latest
             node_version: 14
+          # Error: "Unable to find Node version '15' for platform darwin and architecture arm64."
+          - os: macos-latest
+            node_version: 15
           # Error: if not defined npm_config_node_gyp
           - os: windows-latest
             node_version: 14
